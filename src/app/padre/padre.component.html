@@ -1,0 +1,15 @@
+<button class="btn btn-success" (click)="getData()">Dati</button>
+
+<div class="card myCard" *ngFor="let item of data">
+  <img class="card-img-top"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgF7xPEPFMlXDT4xJ5kniYSw6emGeE2lLsaMriLUDZXg&s" alt="Image not found">
+  <div class="card-body">
+    <h3 class="card-title">Nome: {{item.cognome}} - {{item.nome}}</h3>
+    <h4 class="card-text">{{item.indirizzo}}</h4>
+    <h2 *ngIf="telDalPadre!=''">{{telDalPadre}}</h2>
+    <button class="btn btn-primary mt-2" (click)="getPersona(item)">Informazioni</button>
+  </div>
+</div>
+
+<div class="col-sm-8" *ngIf="personaForChild!=null">
+  <figlio [persona]="personaForChild" (sendTtel)="getTelPadre($event)"></figlio>
+</div>

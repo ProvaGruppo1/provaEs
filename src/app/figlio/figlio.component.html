@@ -1,0 +1,8 @@
+<p>{{persona.nome}}</p>
+<p *ngIf="showPwd; else mostraAsterisco">Password: {{persona.password}}</p>
+<ng-template #mostraAsterisco>***</ng-template>
+<input type="checkbox" id="chkPwd"  [(ngModel)]="showPwd">
+<label for="chkPwd">Mostra pwd</label>
+
+<label for="txtNum"><input type="text" class="form-control" id="txtNum" [(ngModel)]="tel"></label>
+<button class="btn btn-warning" (click)="inviaNumero()">Invia numero</button>
